@@ -11,8 +11,10 @@ body {
     font-family: Arial, sans-serif;
     background: #0d0d0d;
     color: white;
+    scroll-behavior: smooth;
 }
 
+/* HEADER */
 header {
     background: black;
     padding: 20px;
@@ -22,20 +24,17 @@ header {
 header h1 {
     margin: 0;
     color: gold;
+    letter-spacing: 2px;
 }
 
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-}
-
+/* HERO */
 .hero {
     height: 400px;
     background: url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2') center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 2s ease-in;
 }
 
 .hero h2 {
@@ -43,15 +42,24 @@ nav a {
     padding: 20px;
 }
 
+/* SECTIONS */
 .section {
     padding: 40px;
 }
 
+/* CARDS */
 .card {
     background: #1a1a1a;
     padding: 20px;
     margin: 20px 0;
-    border-radius: 10px;
+    border-radius: 12px;
+    transition: 0.4s;
+    animation: slideUp 1s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 20px gold;
 }
 
 .price {
@@ -59,6 +67,47 @@ nav a {
     font-size: 22px;
 }
 
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* BUTTONS */
+.buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 10px;
+    background: gold;
+    color: black;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* FOOTER */
 footer {
     background: black;
     text-align: center;
@@ -71,11 +120,6 @@ footer {
 
 <header>
     <h1>Loc Detailing</h1>
-    <nav>
-        <a href="#">Početna</a>
-        <a href="#">Usluge</a>
-        <a href="#">Kontakt</a>
-    </nav>
 </header>
 
 <div class="hero">
@@ -90,7 +134,6 @@ footer {
         <p>✔️ Temeljito čišćenje felgi</p>
         <p>✔️ Pranje karoserije</p>
         <p>✔️ Pranje stakala</p>
-        <p>⏳ Trajanje: >2h</p>
     </div>
 
     <div class="card">
@@ -99,7 +142,6 @@ footer {
         <p>✔️ Dubinsko čišćenje sjedala</p>
         <p>✔️ Plastika i detalji</p>
         <p>✔️ Tepisi i mirisi</p>
-        <p>⏳ Trajanje: >4h</p>
     </div>
 
     <div class="card">
@@ -107,15 +149,7 @@ footer {
         <p class="price">90€</p>
         <p>NAJISPLATIVIJA OPCIJA</p>
         <p>✔️ Eksterijer + interijer</p>
-        <p>🎁 Poklon na kraju</p>
-        <p>⏳ Trajanje: >6h</p>
-    </div>
-
-    <div class="card">
-        <h2>ODRŽAVANJE</h2>
-        <p>Svako 5. održavanje 50% jeftinije</p>
-        <p class="price">Eksterijer: 20€</p>
-        <p class="price">Interijer: 50€</p>
+        <p>🎁 Poklon uključen</p>
     </div>
 
     <div class="card">
@@ -124,12 +158,24 @@ footer {
         <p>Zaštita voskom +20€</p>
     </div>
 
+    <div class="buttons">
+        <!-- WHATSAPP -->
+        <a class="btn" href="https://wa.me/38599820985?text=Pozdrav,%20zelim%20rezervirati%20termin%20za%20detailing" target="_blank">
+            📲 Kontakt (WhatsApp)
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a class="btn" href="https://instagram.com/" target="_blank">
+            📸 Instagram
+        </a>
+    </div>
+
 </div>
 
 <footer>
     <p>📍 Karlovac (Dolazak na Vašu adresu)</p>
-    <p>📩 Rezervacije u DM</p>
+    <p>⏳ Profesionalna usluga</p>
 </footer>
 
 </body>
-</html>
+</html>tml>
